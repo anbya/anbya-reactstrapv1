@@ -1,13 +1,14 @@
 import React from 'react';
 import imagesCard from '../assets/images/vintage-eyeglasses.png';
-import { Button, CardImg, Form, FormGroup, Label, Input} from 'reactstrap';
-import Modal1 from "./Modal1";
+import {CardImg} from 'reactstrap';
+import Modal1 from "./Modal1.js";
+import Signinform from "./Signinform.js";
 
 class Pagestate extends React.Component {
     constructor() {
         super();
         this.state = {
-            keyapaaja: true
+            keyapaaja: true,
         };
     }
 
@@ -20,19 +21,17 @@ class Pagestate extends React.Component {
             alert("Data user sudah di set");
         }
     }
-    minElement =()=>{
-        this.setState(prevState => ({
-            keyapaaja: prevState.keyapaaja = false
-        }))
+    handleChange = event => {
+        this.setState({
+          value: event.target.value
+        })
+      }
+    
+    handleSubmit = event => {
+        event.preventDefault()
+        alert(`Name: ${this.state.value}`)
     }
-    plusElement = () => {
-        this.setState(prevState => ({
-            keyapaaja: prevState.keyapaaja = true
-        }))
-    }
-
     render(){
-        this.CekUser()
         return(
             <div className="container-fluid" style={{height:"100vh",width:"100vw",backgroundColor:"#efefef",paddingTop:"5vh"}}>
                 <div className="row justify-content-center">
@@ -42,20 +41,7 @@ class Pagestate extends React.Component {
                                 <CardImg src={imagesCard} alt="Card image cap" style={{width:"50%",marginLeft:"25%"}} />
                             </div>
                             <div className="card-body">
-                                <form>
-                                    
-                                </form>
-                                <Form>
-                                    <FormGroup>
-                                    <Label for="exampleEmail">Email</Label>
-                                    <Input type="email" name="email" id="exampleEmail" autoFocus="True" placeholder="Enter Your Email" />
-                                    </FormGroup>
-                                    <FormGroup>
-                                    <Label for="examplePassword">Password</Label>
-                                    <Input type="password" name="password" id="examplePassword" placeholder="Input Password" />
-                                    </FormGroup>
-                                    <Button color="primary" block onClick={this.CekUser}>Login</Button>
-                                </Form>
+                                <Signinform />
                             </div>
                             <div className="card-body">
                                 <div className="row">

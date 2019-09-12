@@ -2,6 +2,7 @@ import React from 'react';
 import './assets/font-awesome/css/font-awesome.min.css';
 // import Modal1 from "./commponents/Modal1";
 // import Modal2 from "./commponents/Modal2";
+import './bootstrap.min.css';
 import Pagestate from "./commponents/testpage.js";
 
 // function App() {

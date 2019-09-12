@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
-import Modal1 from "./Modal1.js";
 
 class Signinform extends React.Component {
     constructor() {
